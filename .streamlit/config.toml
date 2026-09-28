@@ -1,0 +1,8 @@
+# Aspectul și setările aplicației. Streamlit citește automat acest fișier.
+[theme]
+# Mărimea de bază a textului (implicit 16). 18 se citește mai ușor, mai ales pe telefon.
+baseFontSize = 18
+
+[browser]
+# Fără statistici trimise către Streamlit: resursa nu colectează date despre utilizatori.
+gatherUsageStats = false

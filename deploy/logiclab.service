@@ -1,0 +1,23 @@
+# Serviciul systemd care ține LogicLab pornit pe mașina virtuală.
+# Pornește automat la boot și repornește aplicația dacă se oprește.
+#
+# Instalare:  sudo cp deploy/logiclab.service /etc/systemd/system/
+#             sudo systemctl daemon-reload
+#             sudo systemctl enable --now logiclab
+
+[Unit]
+Description=LogicLab (Streamlit)
+After=network.target
+
+[Service]
+User=logiclab
+Group=logiclab
+WorkingDirectory=/opt/logiclab
+# Ascultă DOAR local (127.0.0.1): din internet se ajunge la aplicație numai prin nginx.
+# Varianta cu subfolder (https://site.ro/logiclab/): adaugă la final  --server.baseUrlPath=logiclab
+ExecStart=/opt/logiclab/.venv/bin/streamlit run app.py --server.port 8502 --server.address 127.0.0.1 --server.headless true
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

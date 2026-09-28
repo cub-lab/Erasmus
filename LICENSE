@@ -1,0 +1,59 @@
+LogicLab – Resursă Educațională Deschisă
+Autor: NUME_ELEV, LICEUL_MILITAR
+
+Acest proiect folosește DOUĂ licențe:
+
+  1. CODUL (fișierele .py) – licența MIT (textul complet mai jos).
+  2. CONȚINUTUL EDUCAȚIONAL (textele lecțiilor din lectii.py, întrebările din
+     intrebari.json, fisa_RED.md, README.md și textele afișate în aplicație) –
+     licența Creative Commons Atribuire-Distribuire în condiții identice 4.0
+     Internațional (CC BY-SA 4.0).
+
+--------------------------------------------------------------------------------
+1. Licența MIT (pentru cod)
+--------------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 NUME_ELEV
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+2. Licența CC BY-SA 4.0 (pentru conținutul educațional)
+--------------------------------------------------------------------------------
+
+Copyright (c) 2026 NUME_ELEV
+
+Conținutul educațional este pus la dispoziție sub licența Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+
+Ești liber:
+  - să copiezi și să redistribui materialul în orice mediu sau format;
+  - să adaptezi, să transformi și să construiești pe baza materialului,
+    în orice scop.
+
+În următoarele condiții:
+  - Atribuire: menționezi autorul (NUME_ELEV, LICEUL_MILITAR), pui un link
+    către licență și precizezi dacă ai făcut modificări.
+  - Distribuire în condiții identice: dacă modifici materialul, distribui
+    contribuția ta sub aceeași licență (CC BY-SA 4.0).
+
+Rezumatul licenței: https://creativecommons.org/licenses/by-sa/4.0/deed.ro
+Textul juridic complet: https://creativecommons.org/licenses/by-sa/4.0/legalcode
