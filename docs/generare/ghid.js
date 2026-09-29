@@ -607,6 +607,7 @@ const intrebariComisie = [
     ["Unde se salvează datele elevilor?", "Nicăieri. Totul stă în `st.session_state` doar cât e deschisă pagina. Nu există conturi, bază de date sau statistici trimise."],
     ["Cum adaugă un profesor o întrebare?", "Editează `intrebari.json`, după modelul unei întrebări existente, și rulează `pytest` ca să verifice. Nu trebuie să știe programare."],
     ["Cum știi că răspunsurile din bancă sunt corecte?", "Testele automate recalculează cu motorul logic răspunsul fiecărei întrebări care se poate calcula. Dacă cineva scrie un răspuns greșit, testul pică."],
+    ["De ce ai ales licența CC BY-SA 4.0?", "Pentru că este licența standard pentru resurse educaționale deschise (o folosește și Wikipedia): oricine poate folosi și adapta lecțiile și întrebările, cu condiția să mă menționeze ca autor și să lase și versiunea lui la fel de deschisă. Pentru cod am ales MIT, o licență simplă de software, pentru că licențele Creative Commons nu sunt gândite pentru programe."],
     ["Ce înseamnă RED și cum o respectă proiectul?", "Resursă Educațională Deschisă: licență deschisă (CC BY-SA 4.0 și MIT), acces liber fără cont, poate fi adaptată de oricine și are fișa descriptivă `fisa_RED.md`."],
   ].flatMap(([intrebare, raspuns]) => [
     new Paragraph({ keepNext: true, spacing: { before: 200, after: 60 }, children: [new TextRun({ text: "❓ " + intrebare, bold: true, color: ACCENT })] }),
@@ -630,6 +631,45 @@ const glosar = [
     ["Deploy (publicare)", "Punerea aplicației pe internet, aici pe Streamlit Community Cloud"],
     ["2ⁿ", "Numărul de rânduri al unui tabel de adevăr cu n variabile"],
   ], [2600, 7038]),
+];
+
+// ---------- 14. Licențele ----------
+const licente = [
+  h1("14. Licențele proiectului"),
+  p("Proiectul are **două licențe**, una pentru conținut și una pentru cod. Amândouă sunt trecute în fișierul `LICENSE`, în `README.md` și în subsolul aplicației."),
+  tabel(["Ce anume", "Licența", "Unde se află"], [
+    ["Conținutul educațional", "**CC BY-SA 4.0**", "Lecțiile (`lectii.py`), întrebările (`intrebari.json`), `fisa_RED.md`, manualele, textele din aplicație"],
+    ["Codul", "**MIT**", "Fișierele `.py`"],
+  ], [2600, 2000, 5038]),
+  spatiu(),
+  h2("14.1 Ce este CC BY-SA 4.0"),
+  p("Este o licență **Creative Commons**. Prin ea, autorul spune din start ce au voie alții să facă cu materialul, fără să mai ceară permisiunea de fiecare dată. Este licența folosită, de exemplu, de **Wikipedia**."),
+  tabel(["Parte", "În engleză", "Ce înseamnă"], [
+    ["**CC**", "Creative Commons", "Organizația care a creat aceste licențe gratuite"],
+    ["**BY**", "Attribution (Atribuire)", "Cine folosește materialul trebuie să **menționeze autorul**"],
+    ["**SA**", "ShareAlike (Distribuire în condiții identice)", "Cine îl modifică și îl publică trebuie să-l publice **sub aceeași licență**"],
+    ["**4.0**", "versiunea", "A patra versiune, cea actuală, valabilă internațional"],
+  ], [1300, 3400, 4938]),
+  spatiu(),
+  h3("Ce are voie oricine"),
+  li("**să copieze și să distribuie** materialul: să-l printeze, să-l pună pe un site, să-l trimită elevilor;"),
+  li("**să-l modifice și să-l adapteze**: să adauge întrebări, să schimbe lecții, să-l traducă;"),
+  li("**să-l folosească în orice scop**, inclusiv comercial."),
+  h3("Cu ce condiții"),
+  ...nr([
+    "**Atribuire:** menționează autorul și licența și spune dacă a făcut modificări.",
+    "**Aceeași licență:** dacă publică o versiune modificată, o lasă la fel de liberă, tot sub CC BY-SA 4.0. Nu o poate „închide” și vinde ca pe a lui.",
+  ]),
+  nota("„LogicLab”, de BASALIC Mihai (Colegiul Național Militar «Tudor Vladimirescu»), licența CC BY-SA 4.0, github.com/cub-lab/Erasmus"),
+  h2("14.2 De ce se potrivește la LogicLab"),
+  p("O **Resursă Educațională Deschisă** trebuie, prin definiție, să poată fi folosită și adaptată liber de alți profesori și elevi. CC BY-SA 4.0 permite exact asta și, în plus:"),
+  li("**îl protejează pe autor**: numele lui rămâne pe material, chiar și în versiunile modificate;"),
+  li("**păstrează resursa deschisă**: orice îmbunătățire făcută de altcineva rămâne și ea liberă pentru toți."),
+  h2("14.3 De ce codul are altă licență (MIT)"),
+  p("Licențele Creative Commons sunt gândite pentru **texte, imagini și materiale educaționale**, nu pentru programe. Pentru cod se folosesc licențe de software. **MIT** este una dintre cele mai simple: oricine poate folosi codul cum vrea, cu o singură condiție, să păstreze mențiunea „Copyright (c) 2026 BASALIC Mihai”."),
+  h2("14.4 Răspunsul scurt pentru comisie"),
+  nota("„Am ales CC BY-SA 4.0 pentru conținut pentru că este licența standard pentru resurse educaționale deschise: oricine poate folosi și adapta lecțiile și întrebările, cu condiția să mă menționeze ca autor și să lase și versiunea lui la fel de deschisă. Pentru cod am ales MIT, o licență simplă de software.”", ACCENT2),
+  p("Rezumatul oficial al licenței, în limba română: creativecommons.org/licenses/by-sa/4.0/deed.ro"),
 ];
 
 // =====================================================================
@@ -674,7 +714,7 @@ const doc = new Document({
       first: new Footer({ children: [new Paragraph({ children: [] })] }),
     },
     children: [...coperta, ...cuprins, ...introducere, ...ansamblu, ...structura, ...streamlit, ...logica, ...evaluare,
-               ...json, ...lectii, ...app, ...aplicatii, ...altele, ...drum, ...intrebariComisie, ...glosar],
+               ...json, ...lectii, ...app, ...aplicatii, ...altele, ...drum, ...intrebariComisie, ...glosar, ...licente],
   }],
 });
 
