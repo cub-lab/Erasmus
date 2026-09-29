@@ -2,7 +2,7 @@
 
 **Resursă Educațională Deschisă (RED) pentru învățarea personalizată a propozițiilor compuse și a aplicațiilor lor în informatică.**
 
-Autor: **NUME_ELEV**, elev în clasa a IX-a, **LICEUL_MILITAR**
+Autor: **BASALIC Mihai**, elev în clasa a IX-a, **Colegiul Național Militar „Tudor Vladimirescu”**
 Public țintă: elevii de clasa a IX-a (Matematică: *Mulțimi și elemente de logică matematică*; Logică, argumentare și comunicare)
 
 ---
@@ -135,4 +135,4 @@ La fiecare modificare salvată pe GitHub, aplicația publicată se actualizează
 - **Codul** (fișierele `.py`) este sub licența **MIT**.
 - **Conținutul educațional** (lecțiile, întrebările, textele, această documentație) este sub licența **[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ro)**.
 
-Textul complet se află în fișierul [LICENSE](LICENSE). La reutilizare, menționează: *„LogicLab, de NUME_ELEV (LICEUL_MILITAR), licența CC BY-SA 4.0”*.
+Textul complet se află în fișierul [LICENSE](LICENSE). La reutilizare, menționează: *„LogicLab, de BASALIC Mihai (Colegiul Național Militar «Tudor Vladimirescu»), licența CC BY-SA 4.0”*.

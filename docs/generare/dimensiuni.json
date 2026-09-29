@@ -1,0 +1,110 @@
+{
+"incadrare_rezultat_pc": [
+1472,
+2239
+],
+"test_rezultat_pc": [
+1472,
+4046
+],
+"generator_eroare_pc": [
+1400,
+234
+],
+"generator_paranteze_pc": [
+1400,
+180
+],
+"incadrare_pc": [
+1472,
+2671
+],
+"test_rezultat_b_pc": [
+1472,
+2021
+],
+"acasa_tel": [
+820,
+1777
+],
+"acasa_pc": [
+1500,
+1609
+],
+"lectie_tel": [
+820,
+1777
+],
+"test_rezultat_tel": [
+820,
+1777
+],
+"porti_tel": [
+820,
+1637
+],
+"teste_alegere_pc": [
+1472,
+1059
+],
+"test_intrebare_pc": [
+1472,
+1544
+],
+"if_pc": [
+1472,
+1849
+],
+"expert_pc": [
+1472,
+2268
+],
+"parole_pc": [
+1472,
+1822
+],
+"generator_pc": [
+1472,
+1988
+],
+"generator_tel": [
+820,
+1777
+],
+"test_gresit_pc": [
+1472,
+1753
+],
+"xor_pc": [
+1472,
+2568
+],
+"sql_pc": [
+1472,
+2853
+],
+"despre_pc": [
+1472,
+2484
+],
+"test_rezultat_a_pc": [
+1472,
+2025
+],
+"porti_pc": [
+1472,
+1611
+],
+"lectie_pc": [
+1472,
+2950
+],
+"test_corect_pc": [
+1472,
+1760
+],
+"test_corect_tel": [
+820,
+1484
+]
+}

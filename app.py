@@ -15,8 +15,8 @@ import logica
 from lectii import LECTII
 
 # Autorul resursei (apare în subsol). Înlocuiește cu numele tău și al liceului.
-AUTOR = "NUME_ELEV"
-LICEU = "LICEUL_MILITAR"
+AUTOR = "BASALIC Mihai"
+LICEU = "Colegiul Național Militar „Tudor Vladimirescu”"
 
 FISA_RED = os.path.join(os.path.dirname(__file__), "fisa_RED.md")
 

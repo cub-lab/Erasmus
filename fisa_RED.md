@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Titlu** | LogicLab – Propoziții compuse și aplicațiile lor în informatică |
-| **Autor** | NUME_ELEV, elev în clasa a IX-a, LICEUL_MILITAR |
+| **Autor** | BASALIC Mihai, elev în clasa a IX-a, Colegiul Național Militar „Tudor Vladimirescu” |
 | **Tipul resursei** | Aplicație web interactivă (lecții, exerciții, simulări, teste cu feedback) |
 | **Disciplina** | Matematică (*Mulțimi și elemente de logică matematică*); Logică, argumentare și comunicare; conexiuni cu Informatica |
 | **Clasa** | a IX-a |
@@ -94,7 +94,7 @@ La finalul activității, elevul va putea:
 
 - **Conținutul educațional** (lecții, întrebări, texte) este sub licența [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ro): îl poți copia, modifica și distribui, cu menționarea autorului și sub aceeași licență.
 - **Codul** este sub licența [MIT](https://opensource.org/license/mit): îl poți folosi liber, păstrând mențiunea de copyright.
-- La reutilizare, menționează: *„LogicLab, de NUME_ELEV (LICEUL_MILITAR), licența CC BY-SA 4.0”*.
+- La reutilizare, menționează: *„LogicLab, de BASALIC Mihai (Colegiul Național Militar «Tudor Vladimirescu»), licența CC BY-SA 4.0”*.
 
 ## Bibliografie
 
