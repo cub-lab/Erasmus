@@ -16,3 +16,8 @@ Numele autorului și al liceului se schimbă în `genereaza.js` (caută `BASALIC
 Explică proiectul fișier cu fișier. Extrasele de cod sunt luate automat din fișierele proiectului,
 deci după o modificare în cod ajunge să regenerezi documentul:
 `node docs/generare/ghid.js docs/LogicLab_Ghid_Autor.docx`
+
+## Rezumatul ghidului (`docs/LogicLab_Ghid_Rezumat.docx`)
+
+Fișă de recapitulare de 2–3 pagini. Cifrele (numărul de întrebări) se citesc automat din `intrebari.json`:
+`node docs/generare/rezumat.js docs/LogicLab_Ghid_Rezumat.docx`
