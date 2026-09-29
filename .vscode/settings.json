@@ -1,0 +1,6 @@
+{
+  // Testele din folderul tests/ apar în panoul „Testing” (iconița cu eprubetă).
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": ["tests"]
+}

@@ -1,0 +1,25 @@
+{
+  // Configurări pentru butonul „Run and Debug” (tasta F5) din VS Code.
+  // Alegi configurarea din lista de sus a panoului „Run and Debug”, apoi apeși F5.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LogicLab: pornește aplicația",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": ["run", "app.py"],
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "LogicLab: rulează testele",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q"],
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    }
+  ]
+}

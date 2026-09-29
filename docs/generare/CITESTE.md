@@ -21,3 +21,7 @@ deci după o modificare în cod ajunge să regenerezi documentul:
 
 Fișă de recapitulare de 2–3 pagini. Cifrele (numărul de întrebări) se citesc automat din `intrebari.json`:
 `node docs/generare/rezumat.js docs/LogicLab_Ghid_Rezumat.docx`
+
+## Tutorialul de pornire în VS Code (`docs/LogicLab_Pornire_VSCode.docx`)
+
+`node docs/generare/tutorial.js docs/LogicLab_Pornire_VSCode.docx`

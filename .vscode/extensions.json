@@ -1,0 +1,4 @@
+{
+  // VS Code propune instalarea acestor extensii când deschizi proiectul.
+  "recommendations": ["ms-python.python", "ms-python.debugpy"]
+}

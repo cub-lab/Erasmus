@@ -42,6 +42,12 @@ pytest
 
 ---
 
+### În VS Code
+
+Proiectul are configurarea gata făcută în folderul `.vscode/`: după ce creezi mediul virtual (**Ctrl+Shift+P → Python: Create Environment → Venv**, cu `requirements.txt` bifat), apeși **F5** și aplicația pornește. Pașii detaliați, pentru Windows și macOS, sunt în [docs/LogicLab_Pornire_VSCode.docx](docs/LogicLab_Pornire_VSCode.docx).
+
+---
+
 ## Structura proiectului
 
 ```
