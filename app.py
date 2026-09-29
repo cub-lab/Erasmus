@@ -60,8 +60,11 @@ def pregateste_sesiunea():
         st.session_state["scor_nivel1"] = None  # cel mai bun procent la testul de Nivel 1
     if "test" not in st.session_state:
         st.session_state["test"] = None  # testul pe niveluri aflat în desfășurare
-    if "ultimele_intrebari" not in st.session_state:
-        st.session_state["ultimele_intrebari"] = {1: [], 2: []}  # id-urile din ultimul test
+    if "intrebari_vazute" not in st.session_state:
+        # id-urile întrebărilor pe care elevul le-a primit deja, pe fiecare nivel
+        st.session_state["intrebari_vazute"] = {0: [], 1: [], 2: []}
+    if "intrebari_incadrare" not in st.session_state:
+        st.session_state["intrebari_incadrare"] = None  # cele 6 întrebări alese pentru încadrare
     if "runda" not in st.session_state:
         st.session_state["runda"] = 0  # crește la fiecare test nou (pentru chei unice)
 
@@ -290,9 +293,28 @@ def arata_lectii():
 
 # ---------------- Testul de încadrare ----------------
 
+def alege_si_retine(nivel, numar):
+    """Alege întrebări noi pentru elev și ține minte că le-a văzut."""
+    toate = evaluare.incarca_intrebari()
+    vazute = st.session_state["intrebari_vazute"][nivel]
+    # Dacă elevul a văzut aproape toate întrebările nivelului, o luăm de la capăt.
+    if len(evaluare.intrebari_de_nivel(toate, nivel)) - len(vazute) < numar:
+        vazute = []
+    alese = evaluare.alege_intrebari(toate, nivel, vazute, numar)
+    for intrebare in alese:
+        vazute.append(intrebare["id"])
+    st.session_state["intrebari_vazute"][nivel] = vazute
+    st.session_state["runda"] = st.session_state["runda"] + 1  # chei noi pentru butoanele radio
+    return alese
+
+
 def arata_test_incadrare():
     st.title("🧭 Test de încadrare")
-    intrebari = evaluare.intrebari_de_nivel(evaluare.incarca_intrebari(), 0)
+    # La prima deschidere (și după „Reia încadrarea”) alegem aleator 6 întrebări, câte una pe temă.
+    if st.session_state["intrebari_incadrare"] is None:
+        st.session_state["intrebari_incadrare"] = alege_si_retine(0, evaluare.NUMAR_INTREBARI_INCADRARE)
+        st.session_state["runda_incadrare"] = st.session_state["runda"]
+    intrebari = st.session_state["intrebari_incadrare"]
 
     if st.session_state["raspunsuri_incadrare"] is not None:
         arata_rezultat_incadrare(intrebari)
@@ -310,13 +332,13 @@ def arata_test_incadrare():
             intrebare = intrebari[i]
             st.markdown("**" + str(i + 1) + ".** " + intrebare["enunt"])
             st.radio("Răspunsul tău:", intrebare["variante"], index=None,
-                     key="incadrare_" + str(intrebare["id"]))
+                     key=cheie_incadrare(intrebare))
         trimis = st.form_submit_button("Vezi rezultatul", type="primary")
 
     if trimis:
         raspunsuri = []
         for intrebare in intrebari:
-            raspunsuri.append(st.session_state["incadrare_" + str(intrebare["id"])])
+            raspunsuri.append(st.session_state[cheie_incadrare(intrebare)])
         if None in raspunsuri:
             st.warning("⚠️ Răspunde la toate întrebările înainte să vezi rezultatul.")
             return
@@ -326,9 +348,15 @@ def arata_test_incadrare():
         st.rerun()  # rulăm pagina din nou, ca bara laterală să arate noul nivel
 
 
+def cheie_incadrare(intrebare):
+    """Cheia unică a butoanelor radio pentru o întrebare din încadrare."""
+    return "incadrare_" + str(st.session_state["runda_incadrare"]) + "_" + str(intrebare["id"])
+
+
 def reia_incadrarea():
     st.session_state["raspunsuri_incadrare"] = None
     st.session_state["nivel"] = None
+    st.session_state["intrebari_incadrare"] = None  # la reluare se aleg alte întrebări
 
 
 def arata_rezultat_incadrare(intrebari):
@@ -379,16 +407,7 @@ def arata_corectare(numar, intrebare, raspuns):
 
 def incepe_test(nivel):
     """Pornește un test nou de 10 întrebări (apelată de butoane)."""
-    toate = evaluare.incarca_intrebari()
-    folosite = st.session_state["ultimele_intrebari"][nivel]
-    alese = evaluare.alege_intrebari(toate, nivel, folosite)
-
-    id_uri = []
-    for intrebare in alese:
-        id_uri.append(intrebare["id"])
-    st.session_state["ultimele_intrebari"][nivel] = id_uri
-
-    st.session_state["runda"] = st.session_state["runda"] + 1
+    alese = alege_si_retine(nivel, evaluare.NUMAR_INTREBARI_TEST)
     st.session_state["test"] = {
         "nivel": nivel,
         "intrebari": alese,
@@ -570,7 +589,7 @@ def arata_rezultat_test(test):
     col1.button("🔁 Reia testul", type="primary", on_click=incepe_test, args=[test["nivel"]],
                 width="stretch")
     col2.button("⬅️ Alege alt nivel", on_click=inchide_test, width="stretch")
-    st.caption("La „Reia testul” primești alte întrebări decât data trecută.")
+    st.caption("La „Reia testul” primești alte întrebări decât cele pe care le-ai văzut deja.")
 
 
 def arata_despre():

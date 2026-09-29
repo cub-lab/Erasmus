@@ -59,6 +59,126 @@
     "raspuns_corect": "¬p ∨ ¬q",
     "explicatie": "Legea lui De Morgan: negația unei conjuncții este disjuncția negațiilor."
   },
+  {
+    "id": 7,
+    "nivel": 0,
+    "tema": "negația",
+    "tip": "grila",
+    "enunt": "Dacă p = 0, cât este ¬p?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Negația schimbă valoarea de adevăr: dacă p este falsă, ¬p este adevărată."
+  },
+  {
+    "id": 8,
+    "nivel": 0,
+    "tema": "negația",
+    "tip": "adevarat_fals",
+    "enunt": "Negația propoziției „7 este număr par” este o propoziție adevărată.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Adevărat",
+    "explicatie": "„7 este număr par” este falsă, deci negația ei („7 nu este număr par”) este adevărată."
+  },
+  {
+    "id": 9,
+    "nivel": 0,
+    "tema": "conjuncția",
+    "tip": "grila",
+    "enunt": "Dacă p = 1 și q = 1, cât este p ∧ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Ambele propoziții sunt adevărate, deci și conjuncția lor este adevărată."
+  },
+  {
+    "id": 10,
+    "nivel": 0,
+    "tema": "conjuncția",
+    "tip": "adevarat_fals",
+    "enunt": "Conjuncția p ∧ q este adevărată dacă cel puțin una dintre propoziții este adevărată.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Conjuncția cere ca AMBELE propoziții să fie adevărate. „Cel puțin una” descrie disjuncția."
+  },
+  {
+    "id": 11,
+    "nivel": 0,
+    "tema": "disjuncția",
+    "tip": "grila",
+    "enunt": "Propoziția „2 > 5 sau 4 < 1” este:",
+    "variante": ["adevărată", "falsă"],
+    "raspuns_corect": "falsă",
+    "explicatie": "Ambele propoziții simple sunt false, iar disjuncția este falsă doar în acest caz."
+  },
+  {
+    "id": 12,
+    "nivel": 0,
+    "tema": "disjuncția",
+    "tip": "grila",
+    "enunt": "Dacă p = 1 și q = 1, cât este p ∨ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Disjuncția este adevărată când cel puțin una dintre propoziții este adevărată; aici sunt amândouă."
+  },
+  {
+    "id": 13,
+    "nivel": 0,
+    "tema": "implicația",
+    "tip": "grila",
+    "enunt": "Dacă p = 0 și q = 0, cât este p → q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Când ipoteza este falsă, implicația este adevărată."
+  },
+  {
+    "id": 14,
+    "nivel": 0,
+    "tema": "implicația",
+    "tip": "adevarat_fals",
+    "enunt": "Propoziția „Dacă 3 + 3 = 6, atunci 6 este număr impar” este adevărată.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Ipoteza „3 + 3 = 6” este adevărată, iar concluzia „6 este impar” este falsă: acesta este singurul caz în care implicația este falsă."
+  },
+  {
+    "id": 15,
+    "nivel": 0,
+    "tema": "xor",
+    "tip": "grila",
+    "enunt": "Dacă p = 0 și q = 1, cât este p ⊕ q (XOR)?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Exact una dintre propoziții este adevărată, deci XOR este adevărat."
+  },
+  {
+    "id": 16,
+    "nivel": 0,
+    "tema": "xor",
+    "tip": "adevarat_fals",
+    "enunt": "p ⊕ q este adevărată când p și q au aceeași valoare de adevăr.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Invers: XOR este adevărat când p și q au valori DIFERITE."
+  },
+  {
+    "id": 17,
+    "nivel": 0,
+    "tema": "de_morgan",
+    "tip": "grila",
+    "enunt": "Care este negația propoziției „Afară plouă sau ninge”?",
+    "variante": ["Afară nu plouă sau nu ninge.", "Afară nu plouă și nu ninge.", "Afară plouă și ninge."],
+    "raspuns_corect": "Afară nu plouă și nu ninge.",
+    "explicatie": "După De Morgan, ¬(p ∨ q) = ¬p ∧ ¬q: negăm fiecare parte, iar „sau” devine „și”."
+  },
+  {
+    "id": 18,
+    "nivel": 0,
+    "tema": "de_morgan",
+    "tip": "adevarat_fals",
+    "enunt": "¬(p ∧ q) are aceeași valoare ca ¬p ∧ ¬q, oricare ar fi p și q.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Corect este ¬(p ∧ q) = ¬p ∨ ¬q. De exemplu, pentru p = 1, q = 0: ¬(p ∧ q) = 1, dar ¬p ∧ ¬q = 0."
+  },
 
   {
     "id": 101,
@@ -290,6 +410,176 @@
     "raspuns_corect": "0",
     "explicatie": "Poarta NOT face negația: schimbă 1 în 0 și 0 în 1."
   },
+  {
+    "id": 124,
+    "nivel": 1,
+    "tema": "negația",
+    "tip": "grila",
+    "enunt": "Care este negația propoziției „Numărul 9 este divizibil cu 3”?",
+    "variante": ["Numărul 9 nu este divizibil cu 3.", "Numărul 9 este divizibil cu 9.", "Numărul 3 este divizibil cu 9."],
+    "raspuns_corect": "Numărul 9 nu este divizibil cu 3.",
+    "explicatie": "Negația spune exact opusul propoziției, adăugând „nu”."
+  },
+  {
+    "id": 125,
+    "nivel": 1,
+    "tema": "negația",
+    "tip": "grila",
+    "enunt": "Dacă ¬p = 1, cât este p?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "0",
+    "explicatie": "¬p și p au mereu valori opuse. Dacă ¬p = 1, atunci p = 0."
+  },
+  {
+    "id": 126,
+    "nivel": 1,
+    "tema": "conjuncția",
+    "tip": "grila",
+    "enunt": "Dacă p = 0 și q = 0, cât este p ∧ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "0",
+    "explicatie": "Conjuncția este adevărată doar când ambele propoziții sunt adevărate."
+  },
+  {
+    "id": 127,
+    "nivel": 1,
+    "tema": "conjuncția",
+    "tip": "grila",
+    "enunt": "Propoziția „10 este număr par și 10 este divizibil cu 5” este:",
+    "variante": ["adevărată", "falsă"],
+    "raspuns_corect": "adevărată",
+    "explicatie": "Ambele propoziții simple sunt adevărate, deci conjuncția este adevărată."
+  },
+  {
+    "id": 128,
+    "nivel": 1,
+    "tema": "disjuncția",
+    "tip": "grila",
+    "enunt": "Dacă p = 1 și q = 0, cât este p ∨ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Pentru disjuncție ajunge ca o singură propoziție să fie adevărată."
+  },
+  {
+    "id": 129,
+    "nivel": 1,
+    "tema": "disjuncția",
+    "tip": "adevarat_fals",
+    "enunt": "Disjuncția p ∨ q este falsă când ambele propoziții sunt adevărate.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Disjuncția („sau” neexclusiv) este adevărată când ambele sunt adevărate. Este falsă doar când ambele sunt false."
+  },
+  {
+    "id": 130,
+    "nivel": 1,
+    "tema": "implicația",
+    "tip": "grila",
+    "enunt": "Dacă p = 1 și q = 1, cât este p → q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "Ipoteza și concluzia sunt adevărate, deci implicația este adevărată."
+  },
+  {
+    "id": 131,
+    "nivel": 1,
+    "tema": "implicația",
+    "tip": "grila",
+    "enunt": "În implicația „Dacă ninge, atunci este frig”, care este concluzia (consecventul)?",
+    "variante": ["ninge", "este frig"],
+    "raspuns_corect": "este frig",
+    "explicatie": "Concluzia este partea de după „atunci”; ipoteza este partea de după „dacă”."
+  },
+  {
+    "id": 132,
+    "nivel": 1,
+    "tema": "implicația",
+    "tip": "adevarat_fals",
+    "enunt": "O implicație cu concluzia adevărată este întotdeauna adevărată.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Adevărat",
+    "explicatie": "Implicația este falsă doar când concluzia este falsă (și ipoteza adevărată). Cu concluzia adevărată, nu poate fi falsă."
+  },
+  {
+    "id": 133,
+    "nivel": 1,
+    "tema": "echivalența",
+    "tip": "grila",
+    "enunt": "Dacă p = 1 și q = 1, cât este p ↔ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "1",
+    "explicatie": "p și q au aceeași valoare, deci echivalența este adevărată."
+  },
+  {
+    "id": 134,
+    "nivel": 1,
+    "tema": "echivalența",
+    "tip": "grila",
+    "enunt": "Dacă p = 0 și q = 1, cât este p ↔ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "0",
+    "explicatie": "p și q au valori diferite, deci echivalența este falsă."
+  },
+  {
+    "id": 135,
+    "nivel": 1,
+    "tema": "echivalența",
+    "tip": "grila",
+    "enunt": "Ce cuvinte exprimă echivalența?",
+    "variante": ["dacă și numai dacă", "dacă… atunci", "ori… ori", "și"],
+    "raspuns_corect": "dacă și numai dacă",
+    "explicatie": "„Dacă și numai dacă” leagă două propoziții care sunt ori ambele adevărate, ori ambele false."
+  },
+  {
+    "id": 136,
+    "nivel": 1,
+    "tema": "xor",
+    "tip": "grila",
+    "enunt": "Dacă p = 0 și q = 0, cât este p ⊕ q?",
+    "variante": ["1", "0"],
+    "raspuns_corect": "0",
+    "explicatie": "Nicio propoziție nu este adevărată, deci XOR (exact una adevărată) este fals."
+  },
+  {
+    "id": 137,
+    "nivel": 1,
+    "tema": "xor",
+    "tip": "grila",
+    "enunt": "Pe câte dintre cele 4 rânduri ale tabelului de adevăr este p ⊕ q adevărată?",
+    "variante": ["1", "2", "3", "4"],
+    "raspuns_corect": "2",
+    "explicatie": "Pe rândurile p = 1, q = 0 și p = 0, q = 1, unde valorile sunt diferite."
+  },
+  {
+    "id": 138,
+    "nivel": 1,
+    "tema": "aplicații",
+    "tip": "grila",
+    "enunt": "O poartă logică AND primește la intrări A = 1 și B = 0. Becul de la ieșire este:",
+    "variante": ["aprins (1)", "stins (0)"],
+    "raspuns_corect": "stins (0)",
+    "explicatie": "Poarta AND face conjuncția: 1 ∧ 0 = 0, deci becul rămâne stins."
+  },
+  {
+    "id": 139,
+    "nivel": 1,
+    "tema": "aplicații",
+    "tip": "grila",
+    "enunt": "În Python, ce valoare are expresia `True or False`?",
+    "variante": ["True", "False"],
+    "raspuns_corect": "True",
+    "explicatie": "`or` este disjuncția: ajunge ca o parte să fie `True`."
+  },
+  {
+    "id": 140,
+    "nivel": 1,
+    "tema": "aplicații",
+    "tip": "adevarat_fals",
+    "enunt": "Regula parolei este „minimum 8 caractere ȘI cel puțin o cifră”. Parola „vacanta” este acceptată.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "„vacanta” are doar 7 caractere și nicio cifră, deci nu îndeplinește regula."
+  },
 
   {
     "id": 201,
@@ -520,5 +810,185 @@
     "variante": ["aprins (1)", "stins (0)"],
     "raspuns_corect": "aprins (1)",
     "explicatie": "A AND B = 0, NOT C = 1, iar 0 OR 1 = 1, deci becul se aprinde."
+  },
+  {
+    "id": 224,
+    "nivel": 2,
+    "tema": "de_morgan",
+    "tip": "grila",
+    "enunt": "Care este negația propoziției „Ion este elev și are 15 ani”?",
+    "variante": ["Ion nu este elev și nu are 15 ani.", "Ion nu este elev sau nu are 15 ani.", "Ion este elev sau are 15 ani."],
+    "raspuns_corect": "Ion nu este elev sau nu are 15 ani.",
+    "explicatie": "¬(p ∧ q) = ¬p ∨ ¬q: ajunge ca una dintre afirmații să fie falsă."
+  },
+  {
+    "id": 225,
+    "nivel": 2,
+    "tema": "de_morgan",
+    "tip": "grila",
+    "enunt": "Care expresie are aceeași valoare ca ¬(¬p ∧ q)?",
+    "variante": ["p ∨ ¬q", "¬p ∨ q", "p ∧ ¬q", "¬p ∧ ¬q"],
+    "raspuns_corect": "p ∨ ¬q",
+    "explicatie": "De Morgan: ¬(¬p ∧ q) = ¬¬p ∨ ¬q = p ∨ ¬q."
+  },
+  {
+    "id": 226,
+    "nivel": 2,
+    "tema": "de_morgan",
+    "tip": "grila",
+    "enunt": "În Python, care condiție este echivalentă cu `not (x > 0 or y > 0)`?",
+    "variante": ["`x <= 0 and y <= 0`", "`x <= 0 or y <= 0`", "`x < 0 and y < 0`"],
+    "raspuns_corect": "`x <= 0 and y <= 0`",
+    "explicatie": "Negăm fiecare condiție (negația lui `x > 0` este `x <= 0`), iar `or` devine `and`."
+  },
+  {
+    "id": 227,
+    "nivel": 2,
+    "tema": "tautologii",
+    "tip": "grila",
+    "enunt": "Ce este propoziția p ∨ ¬p?",
+    "variante": ["tautologie", "contradicție", "realizabilă, dar nu tautologie"],
+    "raspuns_corect": "tautologie",
+    "explicatie": "Oricare ar fi p, una dintre p și ¬p este adevărată, deci disjuncția lor este mereu 1."
+  },
+  {
+    "id": 228,
+    "nivel": 2,
+    "tema": "tautologii",
+    "tip": "grila",
+    "enunt": "Ce este propoziția (p ∧ q) → p?",
+    "variante": ["tautologie", "contradicție", "realizabilă, dar nu tautologie"],
+    "raspuns_corect": "tautologie",
+    "explicatie": "Dacă p ∧ q este adevărată, atunci și p este adevărată; implicația nu poate fi falsă."
+  },
+  {
+    "id": 229,
+    "nivel": 2,
+    "tema": "tautologii",
+    "tip": "grila",
+    "enunt": "Ce este propoziția (p → q) ∧ (p ∧ ¬q)?",
+    "variante": ["tautologie", "contradicție", "realizabilă, dar nu tautologie"],
+    "raspuns_corect": "contradicție",
+    "explicatie": "p ∧ ¬q este exact cazul în care p → q este falsă, deci cele două nu pot fi adevărate simultan."
+  },
+  {
+    "id": 230,
+    "nivel": 2,
+    "tema": "tautologii",
+    "tip": "grila",
+    "enunt": "Ce este propoziția p → q?",
+    "variante": ["tautologie", "contradicție", "realizabilă, dar nu tautologie"],
+    "raspuns_corect": "realizabilă, dar nu tautologie",
+    "explicatie": "p → q este adevărată pe trei rânduri și falsă pe rândul p = 1, q = 0."
+  },
+  {
+    "id": 231,
+    "nivel": 2,
+    "tema": "deducție",
+    "tip": "grila",
+    "enunt": "Știm: „Dacă un număr este divizibil cu 4, atunci este par” și „Numărul 7 nu este par”. Ce deducem?",
+    "variante": ["7 nu este divizibil cu 4 (Modus Tollens).", "7 este divizibil cu 4.", "Nu putem deduce nimic."],
+    "raspuns_corect": "7 nu este divizibil cu 4 (Modus Tollens).",
+    "explicatie": "Concluzia implicației este falsă, deci și ipoteza este falsă: aceasta este regula Modus Tollens."
+  },
+  {
+    "id": 232,
+    "nivel": 2,
+    "tema": "deducție",
+    "tip": "grila",
+    "enunt": "Știm că p → q și q → r sunt adevărate, iar p este adevărată. Ce putem spune despre r?",
+    "variante": ["r este adevărată", "r este falsă", "nu putem ști"],
+    "raspuns_corect": "r este adevărată",
+    "explicatie": "Aplicăm Modus Ponens de două ori: din p și p → q rezultă q, apoi din q și q → r rezultă r."
+  },
+  {
+    "id": 233,
+    "nivel": 2,
+    "tema": "deducție",
+    "tip": "adevarat_fals",
+    "enunt": "Din „Dacă învăț, iau notă mare” și „Nu învăț” rezultă sigur că nu iau notă mare.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Greșeală de raționament: când ipoteza este falsă, nu aflăm nimic despre concluzie. Poate iau notă mare și fără să învăț."
+  },
+  {
+    "id": 234,
+    "nivel": 2,
+    "tema": "implicația",
+    "tip": "grila",
+    "enunt": "Care implicație are aceeași valoare ca p → q?",
+    "variante": ["¬q → ¬p", "q → p", "¬p → ¬q", "p → ¬q"],
+    "raspuns_corect": "¬q → ¬p",
+    "explicatie": "¬q → ¬p (contrara reciprocei) are mereu aceeași valoare ca p → q. Pe asta se bazează Modus Tollens."
+  },
+  {
+    "id": 235,
+    "nivel": 2,
+    "tema": "implicația",
+    "tip": "adevarat_fals",
+    "enunt": "p → q și q → p au întotdeauna aceeași valoare de adevăr.",
+    "variante": ["Adevărat", "Fals"],
+    "raspuns_corect": "Fals",
+    "explicatie": "Pentru p = 1, q = 0: p → q = 0, dar q → p = 1. O implicație și reciproca ei pot avea valori diferite."
+  },
+  {
+    "id": 236,
+    "nivel": 2,
+    "tema": "xor",
+    "tip": "grila",
+    "enunt": "Cât este 0110 XOR 0110 (bit cu bit)?",
+    "variante": ["0000", "1111", "0110", "1001"],
+    "raspuns_corect": "0000",
+    "explicatie": "Biții sunt identici doi câte doi, iar XOR dă 0 când biții sunt egali."
+  },
+  {
+    "id": 237,
+    "nivel": 2,
+    "tema": "xor",
+    "tip": "grila",
+    "enunt": "Ce valoare are p ⊕ p, oricare ar fi p?",
+    "variante": ["0", "1", "depinde de p"],
+    "raspuns_corect": "0",
+    "explicatie": "p și p au mereu aceeași valoare, iar XOR este adevărat doar pentru valori diferite. p ⊕ p este o contradicție."
+  },
+  {
+    "id": 238,
+    "nivel": 2,
+    "tema": "aplicații",
+    "tip": "grila",
+    "enunt": "Ce elevi returnează interogarea `SELECT * FROM elevi WHERE NOT (oras = 'Cluj')`?",
+    "variante": ["elevii care nu sunt din Cluj", "elevii din Cluj", "toți elevii"],
+    "raspuns_corect": "elevii care nu sunt din Cluj",
+    "explicatie": "`NOT` din SQL este negația: păstrează rândurile pentru care condiția este falsă."
+  },
+  {
+    "id": 239,
+    "nivel": 2,
+    "tema": "aplicații",
+    "tip": "grila",
+    "enunt": "Ce afișează următorul cod Python?\n\n```python\nx = 7\nif x > 5 and not x > 10:\n    print('A')\nelse:\n    print('B')\n```",
+    "variante": ["A", "B"],
+    "raspuns_corect": "A",
+    "explicatie": "`x > 5` este `True`, `x > 10` este `False`, deci `not x > 10` este `True`, iar `True and True` dă `True`."
+  },
+  {
+    "id": 240,
+    "nivel": 2,
+    "tema": "aplicații",
+    "tip": "grila",
+    "enunt": "Un circuit calculează NOT (A OR B). Dacă A = 0 și B = 0, becul este:",
+    "variante": ["aprins (1)", "stins (0)"],
+    "raspuns_corect": "aprins (1)",
+    "explicatie": "A OR B = 0, iar NOT 0 = 1, deci becul se aprinde."
+  },
+  {
+    "id": 241,
+    "nivel": 2,
+    "tema": "aplicații",
+    "tip": "grila",
+    "enunt": "Un sistem expert are regula: „Dacă este weekend ȘI este soare, atunci merg în parc.” Știm că este weekend și că nu merg în parc. Ce deduce sistemul?",
+    "variante": ["Nu este soare (Modus Tollens).", "Este soare.", "Nu poate deduce nimic."],
+    "raspuns_corect": "Nu este soare (Modus Tollens).",
+    "explicatie": "Concluzia este falsă, deci ipoteza „weekend ȘI soare” este falsă. Cum este weekend, înseamnă că nu este soare."
   }
 ]

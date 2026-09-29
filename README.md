@@ -12,11 +12,11 @@ Public țintă: elevii de clasa a IX-a (Matematică: *Mulțimi și elemente de l
 | Secțiune | Ce face |
 |---|---|
 | 🏠 **Acasă** | Prezentarea resursei, obiectivele de învățare, licența |
-| 🧭 **Test de încadrare** | 6 întrebări. Sub 60%: Nivel 1 – Începător; minimum 60%: Nivel 2 – Avansat |
+| 🧭 **Test de încadrare** | 6 întrebări alese aleator (câte una pe temă) din 18. Sub 60%: Nivel 1 – Începător; minimum 60%: Nivel 2 – Avansat |
 | 📖 **Lecții** | 10 lecții (negația, conjuncția, disjuncția, implicația, echivalența, XOR, De Morgan, tautologii, Modus Ponens / Tollens), fiecare cu un exercițiu verificat imediat |
 | 🧮 **Generator de tabele de adevăr** | Scrii o expresie cu `p`, `q`, `r` și primești tabelul complet, plus răspunsul la întrebarea: tautologie, contradicție sau realizabilă? |
 | 💡 **Unde se folosește?** | 6 demonstrații: porți logice, `if` în Python, validarea parolelor, SQL, criptografie XOR, sistem expert |
-| 📝 **Teste pe niveluri** | 10 întrebări aleatoare, explicație după fiecare răspuns, feedback personalizat pe teme; Nivelul 2 se deblochează cu minimum 70% la Nivel 1 |
+| 📝 **Teste pe niveluri** | 10 întrebări aleatoare din aproximativ 40 pe nivel, fără repetări cât timp mai sunt întrebări noi, explicație după fiecare răspuns, feedback personalizat pe teme; Nivelul 2 se deblochează cu minimum 70% la Nivel 1 |
 | ℹ️ **Despre această resursă** | Fișa RED: licență, autor, instrucțiuni, bibliografie |
 
 Aplicația nu cere cont și nu costă nimic. Nu colectează date personale: progresul se păstrează doar cât timp pagina este deschisă.
@@ -113,7 +113,7 @@ Fișierul trebuie să se termine tot cu `]`.
 
 **Pasul 5.** Repornește aplicația (sau, dacă e publicată, salvează modificarea pe GitHub: aplicația se actualizează singură).
 
-> ⚠️ **Atenție:** testul de încadrare folosește toate întrebările cu `"nivel": 0`. Pentru testele pe niveluri sunt necesare **minimum 10** întrebări pe nivel; peste 20 de întrebări, „Reia testul” dă de fiecare dată întrebări noi.
+> ⚠️ **Cum alege aplicația întrebările:** la fiecare test, aleator: **6** la încadrare (câte una din fiecare temă) și **10** la testele pe niveluri (temele luate pe rând). Sunt preferate întrebările pe care elevul nu le-a văzut încă, iar variantele de la grilă se amestecă. Cu cât banca e mai mare, cu atât testele seamănă mai puțin între ele. Recomandare: **minimum 12** întrebări de încadrare (pe cel puțin 6 teme) și **minimum 30** pe fiecare nivel. Numerele 6 și 10 se schimbă din `evaluare.py` (`NUMAR_INTREBARI_INCADRARE`, `NUMAR_INTREBARI_TEST`).
 
 ---
 

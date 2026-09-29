@@ -36,9 +36,9 @@ La finalul activității, elevul va putea:
 
 ## Cum funcționează învățarea personalizată
 
-1. **Testul de încadrare** (6 întrebări) îl încadrează pe elev la Nivel 1 (sub 60%) sau la Nivel 2 (minimum 60%).
+1. **Testul de încadrare** (6 întrebări alese aleator, câte una pe temă, dintr-o bancă de 18) îl încadrează pe elev la Nivel 1 (sub 60%) sau la Nivel 2 (minimum 60%).
 2. **Lecțiile** se parcurg în ritmul fiecăruia. Fiecare lecție are un exercițiu cu verificare imediată.
-3. **Testele pe niveluri** au câte 10 întrebări alese aleator. După fiecare răspuns, elevul vede explicația.
+3. **Testele pe niveluri** au câte 10 întrebări alese aleator din aproximativ 40 pe nivel, fără să se repete cât timp mai sunt întrebări noi. După fiecare răspuns, elevul vede explicația.
 4. **Feedbackul personalizat pe teme** îi arată elevului exact ce lecții să recitească, de exemplu: „Ai greșit 3 din 4 întrebări despre implicație. Recitește lecția «Implicația».”
 5. **Nivelul 2 se deblochează** după minimum 70% la Nivel 1 sau dacă elevul a fost încadrat direct la Nivel 2.
 

@@ -14,6 +14,8 @@ from lectii import LECTII
 # Fișierul cu întrebări se află în același folder cu acest program.
 FISIER_INTREBARI = os.path.join(os.path.dirname(__file__), "intrebari.json")
 
+# Câte întrebări primește elevul. Banca are mai multe; aplicația le alege aleator.
+NUMAR_INTREBARI_INCADRARE = 6
 NUMAR_INTREBARI_TEST = 10
 PRAG_INCADRARE = 60   # minimum 60% la încadrare => Nivel 2
 PRAG_DEBLOCARE = 70   # minimum 70% la Nivel 1 => se deblochează Nivel 2
@@ -48,30 +50,65 @@ def intrebari_de_nivel(intrebari, nivel):
     return rezultat
 
 
-def alege_intrebari(intrebari, nivel, folosite_inainte):
-    """Alege aleator 10 întrebări de nivelul dat.
+def alege_intrebari(intrebari, nivel, folosite_inainte, numar):
+    """Alege aleator `numar` întrebări de nivelul dat, amestecate pe teme.
 
-    Preferă întrebările care NU au fost în testul anterior (folosite_inainte = listă de id-uri),
-    ca la „Reia testul” elevul să primească alte întrebări.
+    - Temele se iau pe rând (o întrebare din fiecare temă, apoi încă una etc.),
+      ca testul să nu aibă, de exemplu, 4 întrebări despre negație.
+    - În fiecare temă sunt preferate întrebările pe care elevul NU le-a mai văzut
+      (folosite_inainte = lista id-urilor văzute până acum).
+    - Variantele de răspuns sunt amestecate, ca răspunsul corect să nu fie mereu în același loc.
     """
-    toate = intrebari_de_nivel(intrebari, nivel)
-    numar = min(NUMAR_INTREBARI_TEST, len(toate))
-
-    noi = []
-    vechi = []
-    for intrebare in toate:
+    # 1. Grupăm întrebările pe teme: noile (nevăzute) primele, apoi cele deja văzute.
+    pe_teme = {}
+    for intrebare in intrebari_de_nivel(intrebari, nivel):
+        tema = intrebare["tema"]
+        if tema not in pe_teme:
+            pe_teme[tema] = {"noi": [], "vechi": []}
         if intrebare["id"] in folosite_inainte:
-            vechi.append(intrebare)
+            pe_teme[tema]["vechi"].append(intrebare)
         else:
-            noi.append(intrebare)
+            pe_teme[tema]["noi"].append(intrebare)
 
-    if len(noi) >= numar:
-        alese = random.sample(noi, numar)
-    else:
-        # Nu sunt destule întrebări noi: le luăm pe toate și completăm cu câteva vechi.
-        alese = noi + random.sample(vechi, numar - len(noi))
-        random.shuffle(alese)
-    return alese
+    for tema in pe_teme:
+        random.shuffle(pe_teme[tema]["noi"])
+        random.shuffle(pe_teme[tema]["vechi"])
+
+    # 2. Luăm câte o întrebare din fiecare temă, pe rând (temele în ordine aleatoare).
+    #    Întâi doar din cele noi; abia dacă nu ajung, completăm cu cele deja văzute.
+    alese = []
+    for fel in ["noi", "vechi"]:
+        while len(alese) < numar:
+            teme = []
+            for tema in pe_teme:
+                if len(pe_teme[tema][fel]) > 0:
+                    teme.append(tema)
+            if len(teme) == 0:
+                break  # nu mai sunt întrebări de acest fel
+            random.shuffle(teme)
+            for tema in teme:
+                if len(alese) < numar:
+                    alese.append(pe_teme[tema][fel].pop())
+
+    # 3. Ordinea întrebărilor și a variantelor este aleatoare.
+    random.shuffle(alese)
+    rezultat = []
+    for intrebare in alese:
+        rezultat.append(amesteca_variante(intrebare))
+    return rezultat
+
+
+def amesteca_variante(intrebare):
+    """Întoarce o copie a întrebării, cu variantele în altă ordine (doar la tipul „grila”).
+
+    La „adevarat_fals” ordinea rămâne mereu „Adevărat”, „Fals”.
+    """
+    copie = dict(intrebare)
+    if intrebare["tip"] == "grila":
+        variante = list(intrebare["variante"])
+        random.shuffle(variante)
+        copie["variante"] = variante
+    return copie
 
 
 def numara_corecte(intrebari, raspunsuri):
